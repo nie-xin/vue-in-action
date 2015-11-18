@@ -1,14 +1,18 @@
 import Vue from 'vue';
 import App from './components/App.vue';
 import Home from './components/Home.vue';
-// import SecretQuote from './components/SecretQuote.vue';
-// import Signup from './components/Signup.vue';
-// import Login from './components/Login.vue';
+import SecretQuote from './components/SecretQuote.vue';
+import Signup from './components/Signup.vue';
+import Login from './components/Login.vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 
 //just need bootstrap.css
 import 'bootstrap/dist/css/bootstrap.css';
+
+//check user auth status when app starts
+import auth from './auth';
+auth.checkAuth();
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -19,18 +23,18 @@ router.map({
   '/home': {
     component: Home,
   },
-  //
-  // '/secretQuote': {
-  //   component: SecretQuote,
-  // },
-  //
-  // '/login': {
-  //   component: Login,
-  // },
-  //
-  // '/signup': {
-  //   component: Signup,
-  // },
+
+  '/secretquote': {
+    component: SecretQuote,
+  },
+
+  '/login': {
+    component: Login,
+  },
+
+  '/signup': {
+    component: Signup,
+  },
 });
 
 router.redirect({

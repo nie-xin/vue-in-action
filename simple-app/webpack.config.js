@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/index.js',
+  entry: ['./src/index.js', './src/auth/index.js'],
 
   output: {
     path: __dirname + '/build/',
